@@ -1,6 +1,6 @@
-let res = document.querySelector('div#res')
-let lista = document.querySelector('select#fLista')
-let valores = []
+const res = document.querySelector('div#res')
+const lista = document.querySelector('select#fLista')
+const valores = []
 const num = document.querySelector('input#addNumber')
 
 
@@ -32,30 +32,34 @@ function adicionar() {
         let item = document.createElement('option')
         item.text = `Valor ${num.value} adicionado.`
         lista.appendChild(item)
+        res.innerHTML = ''
     } else {
         window.alert('Valor inválido ou já existente na lista.')
     }
+    num.value = ""
+    num.focus() // variavel + funcao nativa focus [apaga o valor do input] 
 }
 
 
-/*function finalizar() {
+function finalizar() {
     if (valores.length == 0) {
         window.alert('Adicione valores antes de finalizar!')
     } else {
-        const maior = 0
-        const menor = 0
+        let maior = valores[0] //o valor inicial tem que ser o valor inicial do array
+        let menor = valores[0]
         valores.forEach(item => {
-            console.log(item)
             if (item > maior) {
                 maior = item
             } else if (item < menor) {
-                menor = item
+                menor =  item
             }
         })
         const tot = valores.length
         res.innerHTML = ''
-        res.innerHTML += `<p>Ao todo você adicionou ${tot}</p>` 
+        res.innerHTML += `<p>Ao todo você adicionou ${tot} numeros.</p>` 
+        res.innerHTML += `<p>O maior numero é ${maior}</p>`
+        res.innerHTML += `<p>O menor numero é ${menor}</p>`
+
     }
 
 }
-finalizar()*/
