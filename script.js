@@ -17,7 +17,7 @@ function isNumero(n) {
 
 function inLista(n, l) {
     if (l.indexOf(Number(n)) != -1) { //roda a lista e verifica se aquele numero ja tem um indice nela, caso o n° seja negativo é pq não tem//
-        return true
+    return true
     } else {
         return false
     }
@@ -47,18 +47,24 @@ function finalizar() {
     } else {
         let maior = valores[0] //o valor inicial tem que ser o valor inicial do array
         let menor = valores[0]
+        let soma = 0
+        let media = 0
         valores.forEach(item => {
             if (item > maior) {
                 maior = item
             } else if (item < menor) {
                 menor =  item
             }
+            soma = soma + item
         })
         const tot = valores.length
+        media = soma / tot
         res.innerHTML = ''
         res.innerHTML += `<p>Ao todo você adicionou ${tot} numeros.</p>` 
         res.innerHTML += `<p>O maior numero é ${maior}</p>`
         res.innerHTML += `<p>O menor numero é ${menor}</p>`
+        res.innerHTML += `<p>A soma de todos os numeros é ${soma}</p>`
+        res.innerHTML += `<p>A média de todos os numeros é ${media.toFixed(2)}</p>`
 
     }
 
