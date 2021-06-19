@@ -1,20 +1,62 @@
-body  {
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
+body {
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
     background: brown;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
-    font-size: medium;
     color: burlywood;
     border-radius: 5px;
     text-align: center;
-   
+    font-size: 13pt;
+    padding: 20px;
+
+}
+
+#texto-section {
+    font-family: 'Righteous', cursive;
+
+    font-size: 15pt;
+}
+
+#texto-header {
+    font-family: 'Righteous', cursive;
 }
 
 section {
-    font: 40pt Arial;
-    color:chocolate;
+
+    color: chocolate;
     text-align: center;
 }
+
 #fLista {
     width: 150px;
+    margin-inline: auto;
+}
+
+#container-box {
+    width: 50%;
+    height: 100%;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    margin-inline: auto;
+    border-radius: 15%;
+    gap: 10px;
+}
+
+input {
+    width: 180px;
+    height: 27px;
+    margin-inline: auto;
+    background: transparent;
+    border: 1px solid orange;
+    border-radius: 12px;
+    font-family: 'Righteous', cursive;
+    color: rgb(230, 173, 98);
 }
