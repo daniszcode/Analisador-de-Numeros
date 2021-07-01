@@ -88,13 +88,20 @@ function salvarItem() {
 }
 
 function  adicionarItemStorage(objectNum) {
-    const valores = JSON.stringify(objectNum);
+    const listaLocal = getItens(objectNum);
+    const listaComNovoItem = [...listaLocal, objectNum];
+    const valores = JSON.stringify(listaComNovoItem);
     const local = localStorage.setItem('list', valores);
-    return local;
+
 
 }
 
-function addItens() {
-    const pegarDoLocal = localStorage.getItem('list');  
+function getItens() {
+    const listaLocal = localStorage.getItem('list');  
+    const item = JSON.parse(listaLocal);
+    if(!item) {
+        return [];
+    }
+    return item;
 }
 
